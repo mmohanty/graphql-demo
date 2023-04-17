@@ -1,0 +1,20 @@
+[
+  {
+    "id": "111",
+    "number": "123",
+    "date": "2022-03-18T16:39:57-08:00",
+    "typeCode": "DEBIT",
+    "amount": 15.00,
+    "description": "Sports",
+    "currency": "USD"
+  },
+  {
+    "id": "222",
+    "number": "22",
+    "date": "2022-03-18T16:39:57-08:00",
+    "typeCode": "DEBIT",
+    "amount": 25.00,
+    "description": "Sports",
+    "currency": "USD"
+  }
+]

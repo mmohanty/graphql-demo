@@ -1,0 +1,28 @@
+[
+  {
+    "id": 10,
+    "offerName": "New-1",
+    "offerType": "Cashback",
+    "status": true,
+    "promoCode": "123",
+    "offerKey": "345",
+    "offerDetails": {
+      "id": "1",
+      "createdOn": "Jan 1, 2022",
+      "validTill": "Jan 1, 2022"
+    }
+  },
+  {
+    "id": 20,
+    "offerName": "Old-15",
+    "offerType": "Promo",
+    "status": true,
+    "promoCode": "345",
+    "offerKey": "456",
+    "offerDetails": {
+      "id": "1",
+      "createdOn": "Jan 1, 2022",
+      "validTill": "Jan 1, 2022"
+    }
+  }
+]

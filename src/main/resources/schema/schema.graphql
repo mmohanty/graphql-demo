@@ -1,0 +1,41 @@
+type Query{
+    comments(postId: ID!): [Comment]
+    transactions: [Transaction]
+    offersByAccount(accountId: ID!): [Offer]
+    offers(accountIds: [String]): [Offer]
+}
+
+type Offer{
+    id: ID!
+    offerName: String
+    offerType: String
+    status: Boolean
+    promoCode: String
+    offerKey: String
+    offerDetails: OfferDetails
+}
+
+type OfferDetails{
+    id: ID!
+    createdOn: String
+    validTill: String
+}
+
+type Comment{
+    id: ID!
+    description: String
+}
+
+type Transaction{
+    id: ID!
+    number: String!
+    date: String
+    typeCode: TransactionType
+    amount: Float
+    description: String
+    currency: String
+}
+enum TransactionType{
+    DEBIT
+    CREDIT
+}

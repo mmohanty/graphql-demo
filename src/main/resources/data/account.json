@@ -1,0 +1,80 @@
+[
+  {
+    "id": "1223",
+    "number": "123",
+    "currency": "USD",
+    "type": "depository",
+    "name": "Mr James",
+    "owners": [
+      {
+        "userId": "user-1",
+        "addresses": [
+          {
+            "city": "New York",
+            "country": "USA",
+            "postalCode": "3456",
+            "region": "east",
+            "street": "1234",
+            "primary": true
+          }
+        ],
+        "emails": [
+          {
+            "address": "test@abc.com",
+            "primary": true,
+            "type": "primary"
+          }
+        ],
+        "names": [
+          "James 1", "James 2"
+        ],
+        "phoneNumbers": [
+          {
+            "number": "111-222-3333",
+            "primary": true,
+            "type": "official"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "1224",
+    "number": "1234",
+    "currency": "USD",
+    "type": "depository",
+    "name": "Mr Bond",
+    "owners": [
+      {
+        "userId": "user-2",
+        "addresses": [
+          {
+            "city": "New York",
+            "country": "USA",
+            "postalCode": "3456",
+            "region": "east",
+            "street": "1234",
+            "primary": true
+          }
+        ],
+        "emails": [
+          {
+            "address": "test2@abc.com",
+            "primary": true,
+            "type": "primary"
+          }
+        ],
+        "names": [
+          "James 12", "James 23"
+        ],
+        "phoneNumbers": [
+          {
+            "number": "111-222-3333",
+            "primary": true,
+            "type": "official"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "available": 2345.12,
+    "current": 2400,
+    "iso_currency_code": "USD",
+    "number": "123",
+    "dateTime": "2022-03-18T16:39:57-08:00"
+  },
+  {
+    "available": 1234.23,
+    "current": 1200,
+    "iso_currency_code": "USD",
+    "number": "345",
+    "dateTime": "2022-03-18T16:39:57-08:00"
+  }
+]
