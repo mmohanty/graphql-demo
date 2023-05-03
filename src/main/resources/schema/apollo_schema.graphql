@@ -1,0 +1,75 @@
+schema
+  @core(feature: "https://specs.apollo.dev/core/v0.1"),
+  @core(feature: "https://specs.apollo.dev/join/v0.1")
+{
+  query: Query
+}
+directive @core(feature: String!) repeatable on SCHEMA
+
+directive @join__field(graph: join__Graph, requires: join__FieldSet, provides: join__FieldSet) on FIELD_DEFINITION
+
+directive @join__type(graph: join__Graph!, key: join__FieldSet) repeatable on OBJECT | INTERFACE
+
+directive @join__owner(graph: join__Graph!) on OBJECT | INTERFACE
+
+directive @join__graph(name: String!, url: String!) on ENUM_VALUE
+
+scalar join__FieldSet
+
+enum join__Graph {
+  OFFERS @join__graph(name: "offers" url: "http://localhost:8085/graphql")
+}
+
+type Query{
+    comments(postId: ID!): [Comment] @join__field(graph: OFFERS)
+    transactions: [Transaction] @join__field(graph: OFFERS)
+    offersByAccount(accountId: ID!): [Offer] @join__field(graph: OFFERS)
+    offers(accountIds: [String]): [Offer] @join__field(graph: OFFERS)
+}
+
+type Offer
+    @join__owner(graph: OFFERS)
+    @join__type(graph: OFFERS, key: "id")
+{
+    id: ID! @join__field(graph: OFFERS)
+    offerName: String @join__field(graph: OFFERS)
+    offerType: String @join__field(graph: OFFERS)
+    status: Boolean @join__field(graph: OFFERS)
+    promoCode: String @join__field(graph: OFFERS)
+    offerKey: String @join__field(graph: OFFERS)
+    offerDetails: OfferDetails @join__field(graph: OFFERS)
+}
+
+type OfferDetails
+    @join__owner(graph: OFFERS)
+    @join__type(graph: OFFERS, key: "id")
+{
+    id: ID! @join__field(graph: OFFERS)
+    createdOn: String @join__field(graph: OFFERS)
+    validTill: String @join__field(graph: OFFERS)
+}
+
+type Comment
+    @join__owner(graph: OFFERS)
+    @join__type(graph: OFFERS, key: "id")
+{
+    id: ID! @join__field(graph: OFFERS)
+    description: String @join__field(graph: OFFERS)
+}
+
+type Transaction
+    @join__owner(graph: OFFERS)
+    @join__type(graph: OFFERS, key: "id")
+{
+    id: ID! @join__field(graph: OFFERS)
+    number: String! @join__field(graph: OFFERS)
+    date: String @join__field(graph: OFFERS)
+    typeCode: TransactionType @join__field(graph: OFFERS)
+    amount: Float @join__field(graph: OFFERS)
+    description: String @join__field(graph: OFFERS)
+    currency: String @join__field(graph: OFFERS)
+}
+enum TransactionType{
+    DEBIT
+    CREDIT
+}
